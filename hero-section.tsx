@@ -125,7 +125,7 @@ export default function HeroSection() {
 
         {/* Date */}
         <div className="text-center">
-          <p className="text-rose-500 font-medium text-sm md:text-base">22 de Julio, 2025</p>
+          <p className="text-rose-500 font-medium text-sm md:text-base">22 de Septiembre, 2023</p>
         </div>
       </div>
 
