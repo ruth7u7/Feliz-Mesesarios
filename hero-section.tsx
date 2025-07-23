@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Heart } from "lucide-react"
-import { images } from "@/lib/images" // Ajusta la ruta según tu estructura
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import { images } from "@/lib/images"; // Ajusta la ruta según tu estructura
 
 export default function HeroSection() {
   // Usar las imágenes desde el archivo de configuración
-  const photos = images.hero.carousel
-  const [currentPhoto, setCurrentPhoto] = useState(0)
+  const photos = images.hero.carousel;
+  const [currentPhoto, setCurrentPhoto] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentPhoto((prev) => (prev + 1) % photos.length)
-    }, 3000)
-    return () => clearInterval(timer)
-  }, [photos.length])
+      setCurrentPhoto((prev) => (prev + 1) % photos.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [photos.length]);
 
   const nextPhoto = () => {
-    setCurrentPhoto((prev) => (prev + 1) % photos.length)
-  }
+    setCurrentPhoto((prev) => (prev + 1) % photos.length);
+  };
 
   const prevPhoto = () => {
-    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length)
-  }
+    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
+  };
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-rose-50 to-orange-100 flex flex-col items-center justify-center p-4 relative overflow-hidden">
@@ -54,7 +54,12 @@ export default function HeroSection() {
             Feliz 22, mi corazón de melón
           </h1>
           <p className="text-xl md:text-2xl text-rose-600 font-medium flex items-center justify-center gap-2">
-            Te amo <Heart className="w-5 h-5 md:w-6 md:h-6 text-red-500 fill-current animate-pulse" />
+            Te amo{" "}
+            <Heart className="w-5 h-5 md:w-6 md:h-6 text-red-500 fill-current animate-pulse" />
+          </p>
+          <p className="text-xs md:text-sm text-rose-600 italic max-w-md mx-auto">
+            “Eres mi lugar favorito, mi paz en los días difíciles y la razón por
+            la que sonrío sin motivo. Te amo con todo mi corazón.”
           </p>
         </div>
 
@@ -73,7 +78,9 @@ export default function HeroSection() {
         {/* Photo carousel section */}
         <div className="text-center space-y-9 w-full">
           <div className="space-y-6">
-            <h2 className="text-lg md:text-xl font-semibold text-rose-700">Momentos únicos a tu lado</h2>
+            <h2 className="text-lg md:text-xl font-semibold text-rose-700">
+              Momentos únicos a tu lado
+            </h2>
             <p className="text-xs md:text-sm text-rose-600 italic max-w-md mx-auto">
               "Cada instante contigo se vuelve eterno en mi memoria."
             </p>
@@ -125,29 +132,42 @@ export default function HeroSection() {
 
         {/* Date */}
         <div className="text-center">
-          <p className="text-rose-500 font-medium text-sm md:text-base">22 de Septiembre, 2023</p>
+          <p className="text-rose-500 font-medium text-sm md:text-base">
+            22 de Septiembre, 2023
+          </p>
         </div>
       </div>
 
       <style jsx>{`
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        
+
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
-        
+
         .animate-float {
           animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </div>
-  )
+  );
 }
