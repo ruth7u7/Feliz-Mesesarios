@@ -47,14 +47,14 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="max-w-4xl w-full flex flex-col items-center space-y-8 md:space-y-12">
+      <div className="max-w-4xl w-full flex flex-col items-center space-y-4 md:space-y-6">
         {/* Main romantic message */}
-        <div className="text-center space-y-4 animate-fade-in">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-rose-800 leading-tight">
+        <div className="text-center space-y-2 animate-fade-in">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-rose-800 leading-tight">
             Feliz 22, mi corazón de melón
           </h1>
-          <p className="text-2xl md:text-3xl text-rose-600 font-medium flex items-center justify-center gap-2">
-            Te amo <Heart className="w-6 h-6 md:w-8 md:h-8 text-red-500 fill-current animate-pulse" />
+          <p className="text-xl md:text-2xl text-rose-600 font-medium flex items-center justify-center gap-2">
+            Te amo <Heart className="w-5 h-5 md:w-6 md:h-6 text-red-500 fill-current animate-pulse" />
           </p>
         </div>
 
@@ -65,29 +65,29 @@ export default function HeroSection() {
             alt="Pareja en moto"
             width={400}
             height={300}
-            className="w-64 h-48 md:w-80 md:h-60 lg:w-96 lg:h-72 object-contain drop-shadow-lg"
+            className="w-48 h-36 md:w-64 md:h-48 lg:w-80 lg:h-60 object-contain drop-shadow-lg"
             priority // Agregado para optimización al ser imagen principal
           />
         </div>
 
         {/* Photo carousel section */}
-        <div className="text-center space-y-6 w-full">
-          <div className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-semibold text-rose-700">Momentos únicos a tu lado</h2>
-            <p className="text-sm md:text-base text-rose-600 italic max-w-md mx-auto">
+        <div className="text-center space-y-9 w-full">
+          <div className="space-y-6">
+            <h2 className="text-lg md:text-xl font-semibold text-rose-700">Momentos únicos a tu lado</h2>
+            <p className="text-xs md:text-sm text-rose-600 italic max-w-md mx-auto">
               "Cada instante contigo se vuelve eterno en mi memoria."
             </p>
           </div>
 
           {/* Carousel */}
-          <div className="relative w-full max-w-sm mx-auto">
-            <div className="relative h-48 md:h-56 rounded-2xl overflow-hidden shadow-xl bg-white p-2">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+            <div className="relative h-40 sm:h-48 md:h-56 rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src={photos[currentPhoto]}
                 alt={`Momento especial ${currentPhoto + 1}`}
                 fill
-                className="object-cover rounded-xl transition-all duration-500"
-                sizes="(max-width: 768px) 320px, 384px"
+                className="object-contain rounded-xl transition-all duration-500"
+                sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 384px"
               />
             </div>
 
