@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { MusicProvider } from '../components/music-context'
 
 export const metadata: Metadata = {
   title: 'Momentos juntos',
@@ -18,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MusicProvider>
+          {children}
+        </MusicProvider>
+      </body>
     </html>
   )
 }
