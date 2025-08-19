@@ -75,7 +75,7 @@ export default function ConditionalMessage() {
   }, [animationPhase, specialMessage]);
   
   return (
-    <div className="text-center space-y-6 animate-fade-in relative min-h-screen p-4 flex flex-col justify-center">
+    <div className="text-center animate-fade-in relative min-h-[100dvh] w-full max-w-screen px-3 sm:px-4 md:px-6 py-4 flex flex-col justify-center items-center overflow-x-hidden">
       {/* Fase 1: Corazones flotantes de entrada */}
       {showHearts && (
         <div className="absolute inset-0 pointer-events-none">
@@ -98,7 +98,7 @@ export default function ConditionalMessage() {
       {/* Fase 2: Título principal con máquina de escribir */}
       {animationPhase >= 2 && (
         <div className="space-y-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-rose-800 leading-tight animate-heart-bounce px-4">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-rose-800 leading-tight animate-heart-bounce px-2 sm:px-4 max-w-[90vw] mx-auto break-words">
             {displayText}
             <span className="animate-pulse text-rose-600">|</span>
           </h1>
@@ -129,14 +129,14 @@ export default function ConditionalMessage() {
         <div className="space-y-6 animate-slide-up">
           {/* Mensaje secundario con efecto de aparición */}
           <div className="space-y-4">
-            <p className="text-xl md:text-2xl text-rose-600 font-medium flex items-center justify-center gap-2 md:gap-3 animate-fade-in">
+            <p className="text-lg xs:text-xl sm:text-2xl text-rose-600 font-medium flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 animate-fade-in whitespace-nowrap">
               Te amo{" "}
-              <Heart className="w-6 h-6 md:w-8 md:h-8 text-red-500 fill-current animate-bounce" />
+              <Heart className="w-5 h-5 xs:w-6 xs:h-6 md:w-8 md:h-8 text-red-500 fill-current animate-bounce" />
             </p>
             
             {/* Mensaje romántico con efecto de escritura */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-4 md:p-6 shadow-2xl border border-rose-200 max-w-md mx-auto">
-              <p className="text-sm md:text-base lg:text-lg text-rose-700 italic leading-relaxed animate-fade-in">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-3 sm:p-4 md:p-6 shadow-2xl border border-rose-200 w-[90vw] sm:w-[85vw] md:w-[80vw] max-w-md mx-auto">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-rose-700 italic leading-relaxed animate-fade-in">
                 "Hoy es un día mágico porque eres mi lugar favorito, mi paz en los días difíciles y la razón por la que sonrío sin motivo. Cada latido de mi corazón late por ti. Te amo con todo mi ser, más allá de las palabras."
               </p>
             </div>
@@ -149,8 +149,8 @@ export default function ConditionalMessage() {
           </div>
           
           {/* Mensaje final con gradiente */}
-          <div className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-3 md:px-6 py-2 md:py-3 rounded-full inline-block animate-pulse mx-2">
-            <p className="text-sm md:text-base font-bold">✨ Te elegí ayer, te elijo hoy y volveré a elegirte mañana ✨</p>
+          <div className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-2.5 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full inline-block animate-pulse mx-auto w-[95vw] sm:w-auto max-w-[95vw]">
+            <p className="text-xs xs:text-sm sm:text-base font-bold truncate">✨ Te elegí ayer, te elijo hoy y volveré a elegirte mañana ✨</p>
           </div>
 
           {/* QR Code */}
