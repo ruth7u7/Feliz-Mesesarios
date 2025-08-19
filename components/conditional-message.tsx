@@ -75,7 +75,7 @@ export default function ConditionalMessage() {
   }, [animationPhase, specialMessage]);
   
   return (
-    <div className="text-center space-y-6 animate-fade-in relative overflow-hidden">
+    <div className="text-center space-y-6 animate-fade-in relative min-h-screen p-4 flex flex-col justify-center">
       {/* Fase 1: Corazones flotantes de entrada */}
       {showHearts && (
         <div className="absolute inset-0 pointer-events-none">
@@ -135,8 +135,8 @@ export default function ConditionalMessage() {
             </p>
             
             {/* Mensaje romántico con efecto de escritura */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-rose-200 max-w-2xl mx-auto">
-              <p className="text-base md:text-lg lg:text-xl text-rose-700 italic leading-relaxed animate-fade-in">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-4 md:p-6 shadow-2xl border border-rose-200 max-w-md mx-auto">
+              <p className="text-sm md:text-base lg:text-lg text-rose-700 italic leading-relaxed animate-fade-in">
                 "Hoy es un día mágico porque eres mi lugar favorito, mi paz en los días difíciles y la razón por la que sonrío sin motivo. Cada latido de mi corazón late por ti. Te amo con todo mi ser, más allá de las palabras."
               </p>
             </div>
@@ -148,9 +148,9 @@ export default function ConditionalMessage() {
             <Heart className="w-5 h-5 text-rose-400 animate-pulse opacity-60" style={{ animationDelay: "0.9s" }} />
           </div>
           
-          {/* Contador de días especiales */}
-          <div className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full inline-block animate-pulse">
-            <p className="text-base md:text-lg font-bold">✨ Te elegí ayer, te elijo hoy y volveré a elegirte mañana ✨</p>
+          {/* Mensaje final con gradiente */}
+          <div className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-3 md:px-6 py-2 md:py-3 rounded-full inline-block animate-pulse mx-2">
+            <p className="text-sm md:text-base font-bold">✨ Te elegí ayer, te elijo hoy y volveré a elegirte mañana ✨</p>
           </div>
 
           {/* QR Code */}
