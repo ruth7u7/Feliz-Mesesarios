@@ -150,7 +150,7 @@ export default function ConditionalMessage() {
           
           {/* Contador de días especiales */}
           <div className="bg-gradient-to-r from-rose-400 to-pink-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full inline-block animate-pulse">
-            <p className="text-base md:text-lg font-bold">✨ Día Especial #22 ✨</p>
+            <p className="text-base md:text-lg font-bold">✨ Te elegí ayer, te elijo hoy y volveré a elegirte mañana ✨</p>
           </div>
 
           {/* QR Code */}
