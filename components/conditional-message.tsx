@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Heart, Sparkles, Star, Zap } from "lucide-react";
+import { Heart, Sparkles, Star } from "lucide-react";
 import QRCodeComponent from "./qr-code";
 
 export default function ConditionalMessage() {
@@ -79,15 +79,15 @@ export default function ConditionalMessage() {
       {/* Fase 1: Corazones flotantes de entrada */}
       {showHearts && (
         <div className="absolute inset-0 pointer-events-none">
-          {Array.from({ length: 4 }).map((_, i) => (
+          {Array.from({ length: 2 }).map((_, i) => (
             <Heart
               key={i}
-              className="absolute text-rose-400 animate-heart-float opacity-60"
+              className="absolute text-rose-400 animate-heart-float opacity-50"
               style={{
-                left: `${25 + (i * 15)}%`,
-                top: `${15 + (i * 10)}%`,
-                fontSize: `${1.2 + Math.random()}rem`,
-                animationDelay: `${i * 0.3}s`,
+                left: `${30 + (i * 35)}%`,
+                top: `${20 + (i * 15)}%`,
+                fontSize: `${1 + Math.random() * 0.2}rem`,
+                animationDelay: `${i * 0.5}s`,
                 animationDuration: `${4 + Math.random() * 2}s`
               }}
             />
@@ -105,19 +105,19 @@ export default function ConditionalMessage() {
         </div>
       )}
       
-      {/* Fase 3: Sparkles y efectos especiales */}
+      {/* Fase 3: Efectos minimalistas */}
       {showSparkles && (
         <div className="absolute inset-0 pointer-events-none">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Sparkles
+          {Array.from({ length: 2 }).map((_, i) => (
+            <Heart
               key={i}
-              className="absolute text-yellow-400 animate-heart-sparkle opacity-40"
+              className="absolute text-rose-300 animate-heart-float opacity-30"
               style={{
-                left: `${20 + (i * 12)}%`,
-                top: `${15 + (i * 12)}%`,
-                fontSize: `${0.8 + Math.random() * 0.3}rem`,
-                animationDelay: `${i * 0.4}s`,
-                animationDuration: `${2 + Math.random()}s`
+                left: `${35 + (i * 25)}%`,
+                top: `${25 + (i * 20)}%`,
+                fontSize: `${0.8 + Math.random() * 0.2}rem`,
+                animationDelay: `${i * 0.6}s`,
+                animationDuration: `${3 + Math.random()}s`
               }}
             />
           ))}
@@ -130,10 +130,8 @@ export default function ConditionalMessage() {
           {/* Mensaje secundario con efecto de aparición */}
           <div className="space-y-4">
             <p className="text-xl md:text-2xl text-rose-600 font-medium flex items-center justify-center gap-2 md:gap-3 animate-fade-in">
-              <Zap className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
               Te amo{" "}
               <Heart className="w-6 h-6 md:w-8 md:h-8 text-red-500 fill-current animate-bounce" />
-              <Zap className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
             </p>
             
             {/* Mensaje romántico con efecto de escritura */}
@@ -144,11 +142,10 @@ export default function ConditionalMessage() {
             </div>
           </div>
           
-          {/* Elementos decorativos animados - simplificados */}
-          <div className="flex justify-center space-x-8">
-            <Heart className="w-6 h-6 text-rose-400 animate-pulse opacity-70" style={{ animationDelay: "0.3s" }} />
-            <Star className="w-5 h-5 text-yellow-400 animate-pulse opacity-60" style={{ animationDelay: "0.6s" }} />
-            <Heart className="w-6 h-6 text-rose-400 animate-pulse opacity-70" style={{ animationDelay: "0.9s" }} />
+          {/* Elementos decorativos animados - minimalistas */}
+          <div className="flex justify-center space-x-10">
+            <Heart className="w-5 h-5 text-rose-400 animate-pulse opacity-60" style={{ animationDelay: "0.3s" }} />
+            <Heart className="w-5 h-5 text-rose-400 animate-pulse opacity-60" style={{ animationDelay: "0.9s" }} />
           </div>
           
           {/* Contador de días especiales */}
