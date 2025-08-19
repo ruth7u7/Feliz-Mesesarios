@@ -137,8 +137,11 @@ export default function ConditionalMessage() {
             {/* Mensaje romántico con efecto de escritura */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-3 sm:p-4 md:p-6 shadow-2xl border border-rose-200 w-[90vw] sm:w-[85vw] md:w-[80vw] max-w-md mx-auto">
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-rose-700 italic leading-relaxed animate-fade-in">
-                "Hoy es un día mágico porque eres mi lugar favorito, mi paz en los días difíciles y la razón por la que sonrío sin motivo. Cada latido de mi corazón late por ti. Te amo con todo mi ser, más allá de las palabras."
-              </p>
+"Eres mi sol en los días grises, mi refugio en los momentos difíciles, y la razón por la que sonrío sin motivo. Te amo más que ayer y menos que mañana, porque cada día a tu lado es especial, único y lleno de luz.
+
+Prometo caminar a tu lado mientras tu me lo permita, y mientras tú quieras estar conmigo. Sé que nuestro amor no conoce límites: puede romper barreras, superar obstáculos y crecer más fuerte cada día, siempre que los dos lo queramos y luchemos juntos por él.
+
+Contigo aprendí que el amor verdadero es elegirnos todos los días, sostenernos en lo difícil, celebrar lo bonito y soñar con un futuro donde siempre estemos juntos."</p>
             </div>
           </div>
           
