@@ -66,7 +66,7 @@ export default function MusicPlayer() {
               <h3 className="text-xl font-bold text-rose-700">🎵 Nuestra Canción Especial</h3>
               <Sparkles className="w-5 h-5 text-yellow-500" />
             </div>
-            <p className="text-sm text-rose-600 font-medium">"Entra en mi vida" - Sin Bandera</p>
+            <p className="text-sm text-rose-600 font-medium">"Te Amo" - Franco de Vita</p>
             <p className="text-xs text-rose-500 mt-1 italic">✨ Solo disponible el día 22 ✨</p>
             
             {autoPlayBlocked && (

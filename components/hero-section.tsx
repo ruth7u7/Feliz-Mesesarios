@@ -49,30 +49,27 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="max-w-4xl w-full flex flex-col items-center space-y-4 md:space-y-6">
-        {/* Botón de demostración */}
-        <div className="text-center mb-4">
-          <button
-            onClick={() => setDemoMode(!demoMode)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl ${
-              demoMode 
-                ? 'bg-green-500 hover:bg-green-600 text-white' 
-                : 'bg-rose-400 hover:bg-rose-500 text-white'
-            }`}
-            aria-label={demoMode ? "Desactivar modo demostración" : "Activar modo demostración"}
-          >
-            {demoMode ? '🎉 Modo Día 22 Activado' : '🎬 Ver Demostración Día 22'}
-          </button>
-          {demoMode && (
-            <p className="text-xs text-rose-600 mt-2 italic">
-              Modo demostración activado - Simula el día 22
-            </p>
-          )}
-        </div>
+      <div className="max-w-4xl w-full flex flex-col items-center space-y-4 md:space-y-6 relative z-10">
+        {/* Botón de demostración - solo mostrar si no estamos en modo especial */}
+        {!isSpecialDay && (
+          <div className="text-center mb-4">
+            <button
+              onClick={() => setDemoMode(true)}
+              className="bg-rose-400/90 hover:bg-rose-500 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm"
+              aria-label="Activar modo demostración"
+            >
+              🎬 Ver Demostración Día 22
+            </button>
+          </div>
+        )}
 
         {/* Mensaje condicional o timer */}
         {isSpecialDay ? (
-          <ConditionalMessage photos={images.hero.carousel} />
+          <ConditionalMessage 
+            photos={images.hero.carousel} 
+            demoMode={demoMode}
+            setDemoMode={setDemoMode}
+          />
         ) : (
           <CountdownTimer />
         )}
@@ -91,21 +88,6 @@ export default function HeroSection() {
           </div>
         )}
 
-        {/* Botón de confeti - SIEMPRE disponible */}
-        <div className="text-center mt-4">
-          <button
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).triggerHeartConfetti) {
-                (window as any).triggerHeartConfetti();
-              }
-            }}
-            className="bg-rose-400 hover:bg-rose-500 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto"
-            aria-label="¡Más confeti de corazones!"
-          >
-            <Heart className="w-4 h-4" />
-            ¡Más confeti! 🎉
-          </button>
-        </div>
 
         {/* Date */}
         {/* <div className="text-center">

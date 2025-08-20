@@ -13,7 +13,7 @@ interface MusicContextType {
   setVolume: (volume: number) => void;
   setAutoPlayBlocked: (blocked: boolean) => void;
   setAttemptCount: (count: number) => void;
-  audioRef: React.RefObject<HTMLAudioElement>;
+  audioRef: React.RefObject<HTMLAudioElement | null>;
   togglePlay: () => Promise<void>;
   toggleMute: () => void;
   forceAutoPlay: () => Promise<void>;
@@ -209,7 +209,7 @@ export function MusicProvider({ children }: MusicProviderProps) {
         onError={() => console.log("Error al cargar el audio")}
         loop
       >
-        <source src="/Sin Bandera ; Entra en mi vida - Letra.mp3" type="audio/mpeg" />
+        <source src="/Franco De Vita - Te Amo (Letra).mp3" type="audio/mpeg" />
         Tu navegador no soporta el elemento de audio.
       </audio>
     </MusicContext.Provider>
